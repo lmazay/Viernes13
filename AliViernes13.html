@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hola Mi Ali</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-image: url('https://i.pinimg.com/474x/af/07/da/af07dae9ebe640a7796a6f066b912926.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-attachment: fixed;
+      transition: background-image 2s ease-in-out;
+    }
+
+    .card {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: white;
+      padding: 10px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+      font-size: 16px;
+      color: #E74C3C;
+      animation: moveAround 10s ease-in-out infinite;
+    }
+
+    @keyframes moveAround {
+      0% { top: 50%; left: 50%; transform: translate(-50%, -50%); }
+      25% { top: 20%; left: 20%; transform: translate(-20%, -20%); }
+      50% { top: 50%; left: 80%; transform: translate(-80%, -50%); }
+      75% { top: 80%; left: 50%; transform: translate(-50%, -80%); }
+      100% { top: 50%; left: 50%; transform: translate(-50%, -50%); }
+    }
+
+    .message-container {
+      display: none;
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .message {
+      position: absolute;
+      opacity: 0;
+      font-size: 16px;
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 10px;
+      border-radius: 15px;
+      box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+      transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+      max-width: 90%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .message img {
+      max-width: 80%;
+      height: auto;
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+
+    .visible {
+      opacity: 1;
+      transform: scale(1.1);
+    }
+
+    .heart-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 1000;
+      overflow: hidden;
+    }
+
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: red;
+      transform: rotate(45deg);
+      animation: float 5s infinite ease-in-out;
+      opacity: 0;
+    }
+
+    .heart::before, .heart::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: red;
+      border-radius: 50%;
+    }
+
+    .heart::before { top: -10px; left: 0; }
+    .heart::after { left: 10px; top: 0; }
+
+    @keyframes float {
+      0% { transform: translateY(0); opacity: 1; }
+      100% { transform: translateY(-100vh); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="card" id="startCard">
+    Haz click aquí mi niña ❤️
+  </div>
+
+  <div class="message-container" id="messageContainer">
+    <div class="message" id="message1">
+      <img src="https://www.dropbox.com/scl/fi/rqbfcbwwgd2pf7plmooja/URLP1.jpeg?rlkey=srb8sarqoulvdkw5dwa1qh5xa&st=l8wktffa&raw=1" alt="Imagen 1">
+      <div>Tú tienes todo lo que busco<br>Conocerte para mí es todo un gusto</div>
+    </div>
+    <div class="message" id="message2">
+      <img src="https://www.dropbox.com/scl/fi/hzixb95niwjzth5nvawwr/URLP2.jpeg?rlkey=0u91mqhun4s6vnefamvkw75qx&st=60fm1hhy&raw=1" alt="Imagen 2">
+      <div>Tienes algo en particular, algo que te hace más<br>Algo que no entiendo, que no me para de enamorar</div>
+    </div>
+    <div class="message" id="message3">
+      <img src="https://www.dropbox.com/scl/fi/gmhzi4wac5dp4pzv7ocqy/URLP3.jpeg?rlkey=tnmkk21zbd0710i2mat1r744h&st=ipmyzyda&raw=1" alt="Imagen 3">
+      <div>Tú sabes bien quién eres, la que me mancha de labial<br>La que se duerme sin despedir y sin avisar</div>
+    </div>
+    <div class="message" id="message4">
+      <img src="https://www.dropbox.com/scl/fi/y2ev8bezdca85bveyfrl9/URLP4.jpeg?rlkey=vkipsnbyd1j975vn4741rckca&st=t6r0y6mr&raw=1" alt="Imagen 4">
+      <div>La que le encanta molestar y fregar<br>La más bella del lugar</div>
+    </div>
+    <div class="message" id="message5">
+      <img src="https://www.dropbox.com/scl/fi/zb0hp64in1gnpc263lrhm/URL5.jpeg?rlkey=7g43ew1ayelplqilum0hdj5fi&st=f4457zea&raw=1" alt="Imagen 5">
+      <div>Y me llevas lentamente a imaginar<br>A una vida donde tú puedas estar</div>
+    </div>
+    <div class="message" id="message6">
+      <img src="https://www.dropbox.com/scl/fi/koxvziznf3gbsoppws9tk/URL6.jpeg?rlkey=h87y4sbmna1rol6h2am8abcru&st=od5ak4s4&raw=1" alt="Imagen 6">
+      <div>Y me llevas lentamente a imaginar<br>A una vida donde te pueda cuidar</div>
+    </div>
+    <div class="message" id="message7">
+      <img src="https://www.dropbox.com/scl/fi/yn5rl8hjwb9ajk5dypy2o/URL7.jpeg?rlkey=bvz3zl33zsgtt4arscq7skof1&st=gtqwo90s&raw=1" alt="Imagen 7">
+      <div>Yo sé que te he dicho mil veces<br>Que nadie te va a querer, como yo lo voy a hacer</div>
+    </div>
+    <div class="message" id="message8">
+      <img src="https://www.dropbox.com/scl/fi/h4zelqm9y9tnbodxryc8p/URL8.jpeg?rlkey=h027hni7xbtqp33kbnxsf76z2&st=99k4xtlw&raw=1" alt="Imagen 8">
+      <div>Que tú pones buena suerte en mi viernes 13<br>Que tengo tu nombre tatuado en mi piel</div>
+    </div>
+    <div class="message" id="message9">
+      <img src="https://www.dropbox.com/scl/fi/cce5qunby15amozue00u3/URL9.jpeg?rlkey=v0vfkdulfq1udcqgkx3jf1rqu&st=npx0nqg1&raw=1" alt="Imagen 9">
+      <div>Que ya te extraño, aunque te haya visto ayer<br>Sostente fuerte, yo siento lo mismo que tú sientes</div>
+    </div>
+    <div class="message" id="message10">
+      <img src="https://www.dropbox.com/scl/fi/0qp09tw8zaxqxv83myqtb/URL10.jpeg?rlkey=6nrix6psr41msntxwm64vkqb4&st=2bixx9ph&raw=1" alt="Imagen 10">
+      <div>Miradas que no mienten, sonrisas que muestran dientes<br>Contigo todo es más que suficiente</div>
+    </div>
+    <div class="message" id="message11">
+      <img src="https://www.dropbox.com/scl/fi/8op8hbxfoa177btha4vuv/URL11.jpeg?rlkey=xg5p7uclahsnh078s2sqw64l3&st=td5h5fm8&raw=1" alt="Imagen 11">
+      <div>No ocupo de alguien más, solo a ti presente<br>Y me llevas lentamente a imaginar</div>
+    </div>
+    <div class="message" id="message12">
+      <img src="https://www.dropbox.com/scl/fi/6naz4fbb6ykwere3fq73f/URL12.jpeg?rlkey=wl38jrkfbz3h3njtk5p04zhjc&st=06xgs3po&raw=1" alt="Imagen 12">
+      <div>A una vida donde tú puedas estar<br>Y me llevas lentamente a imaginar</div>
+    </div>
+    <div class="message" id="message13">
+      <img src="https://www.dropbox.com/scl/fi/r5lwlu3tcyjmw88gcjrr9/URL13.jpeg?rlkey=pu9pxom2vb74lbvyycu8temap&st=j0o9jj11&raw=1" alt="Imagen 13">
+      <div>A una vida donde te pueda cuidar<br>Porque si no es contigo, no es con nadie más</div>
+    </div>
+    <div class="message" id="message14">
+      <img src="https://www.dropbox.com/scl/fi/uflh9wy2s9ntqoh1gjc5v/URL15.jpeg?rlkey=vuejptqwm3awoy5680rg0dd95&st=w10dlrg2&raw=1" alt="Imagen 14">
+      <div>Es algo que tú nunca, nunca entenderás<br>Con alguien más, yo no me puedo conformar</div>
+    </div>
+    <div class="message" id="message15">
+      <img src="https://www.dropbox.com/scl/fi/1ivdp64bjzcccoh0fhp3p/URL16.jpeg?rlkey=1zgnepmu0lr0lsphd4bgegpnj&st=lzxrurom&raw=1" alt="Imagen 15">
+      <div>Sabiendo que alguien va a tomar mi lugar<br>Nadie te verá, como yo te voy a ver</div>
+    </div>
+    <div class="message" id="message16">
+      <img src="https://www.dropbox.com/scl/fi/y2ev8bezdca85bveyfrl9/URLP4.jpeg?rlkey=vkipsnbyd1j975vn4741rckca&st=t6r0y6mr&raw=1" alt="Imagen 16">
+      <div>Quiero cumplir las cosas que acordamos en hacer<br>Y si la vida me da a escoger</div>
+    </div>
+    <div class="message" id="message17">
+      <img src="https://www.dropbox.com/scl/fi/gmhzi4wac5dp4pzv7ocqy/URLP3.jpeg?rlkey=tnmkk21zbd0710i2mat1r744h&st=ipmyzyda&raw=1" alt="Imagen 17">
+      <div>Te escojo a ti, otra vez</div>
+    </div>
+    <div class="message" id="message18">
+      <img src="https://www.dropbox.com/scl/fi/hzixb95niwjzth5nvawwr/URLP2.jpeg?rlkey=0u91mqhun4s6vnefamvkw75qx&st=60fm1hhy&raw=1" alt="Imagen 18">
+      <div>Y me llevas lentamente a imaginar <br> A una vida donde tú puedas estar</div>
+    </div>
+    <div class="message" id="message19">
+      <img src="https://www.dropbox.com/scl/fi/rqbfcbwwgd2pf7plmooja/URLP1.jpeg?rlkey=srb8sarqoulvdkw5dwa1qh5xa&st=l8wktffa&raw=1" alt="Imagen 19">
+      <div>Y me llevas lentamente a imaginar<br>A una vida donde te pueda cuidar</div>
+    </div>
+  </div>
+  </div>
+
+  <div class="heart-container" id="heartContainer"></div>
+
+  <iframe id="backgroundMusic" width="0" height="0" style="display: none;" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const startCard = document.getElementById('startCard');
+      const messageContainer = document.getElementById('messageContainer');
+      const heartContainer = document.getElementById('heartContainer');
+      const messages = [
+        document.getElementById('message1'),
+        document.getElementById('message2'),
+        document.getElementById('message3'),
+        document.getElementById('message4'),
+        document.getElementById('message5'),
+        document.getElementById('message6'),
+        document.getElementById('message7'),
+        document.getElementById('message8'),
+        document.getElementById('message9'),
+        document.getElementById('message10'),
+        document.getElementById('message11'),
+        document.getElementById('message12'),
+        document.getElementById('message13'),
+        document.getElementById('message14'),
+        document.getElementById('message15'),
+        document.getElementById('message16'),
+        document.getElementById('message17'),
+        document.getElementById('message18'),
+        document.getElementById('message19')
+      ];
+
+
+      let messageIndex = 0;
+      const messageDurations = [7000, 7200, 7200, 5700, 12000, 14000, 5000, 5500, 5000, 5000, 10000, 13000, 8000, 5000, 6000, 6000, 25000, 10000, 18000]; // Duración de cada mensaje en milisegundos
+
+      const backgrounds = [
+        'https://www.dropbox.com/scl/fi/iklnhvyhgg61dg5mzqdob/URLFondo2.jpeg?rlkey=itrh71zubx8sv5z3dnyk5bzj0&st=hiacfkgv&raw=1'
+        // Añadir más URLs de fondos aquí
+      ];
+
+      startCard.addEventListener('click', () => {
+        document.body.style.backgroundImage = `url('${backgrounds[Math.floor(Math.random() * backgrounds.length)]}')`;
+        startCard.style.display = 'none';
+        messageContainer.style.display = 'block';
+
+        const music = document.getElementById('backgroundMusic');
+        music.style.display = 'block';
+        music.src = "https://www.youtube.com/embed/ubq19HWOYo4?autoplay=1&loop=1&playlist=ubq19HWOYo4";
+
+        showMessage();
+        generateHearts();
+      });
+
+      function showMessage() {
+        const message = messages[messageIndex];
+        if (message) {
+          message.classList.add('visible');
+          generateHearts()
+          setTimeout(() => {
+            message.classList.remove('visible');
+            messageIndex++;
+            if (messageIndex < messages.length) {
+              setTimeout(showMessage, 0); // Esperar un segundo antes de mostrar el siguiente mensaje
+            } else {
+              closeProgram(); // Cerrar todo al finalizar
+            }
+          }, messageDurations[messageIndex]); 
+        }
+      }
+
+      function generateHearts() {
+        for (let i = 0; i < 50; i++) {
+          const heart = document.createElement('div');
+          heart.className = 'heart';
+          heart.style.top = `${Math.random() * 100}vh`;
+          heart.style.left = `${Math.random() * 100}vw`;
+          heart.style.animationDuration = `${Math.random() * 5 + 3}s`;
+          heartContainer.appendChild(heart);
+
+          setTimeout(() => {
+            heart.style.opacity = 0;
+            setTimeout(() => {
+              heartContainer.removeChild(heart); // Eliminar el corazón del DOM
+            }, 2000); // Esperar a que se desvanezca antes de eliminar
+          }, 2000);
+        }
+      }
+
+      function closeProgram() {
+        messageContainer.style.display = 'none';
+        heartContainer.innerHTML = ''; // Limpiar corazones al cerrar
+        startCard.style.display = 'none'; // Ocultar la tarjeta de inicio
+        document.body.innerHTML = '<h1>Gracias por ver!</h1>'; // Mensaje final
+        
+        // Cerrar la ventana después de 10 segundos
+        setTimeout(() => {
+          window.close();
+        }, 10000);
+      }
+    });
+  </script>
+</body>
+</html>
